@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sangita Mukhwas - 100% Natural, authentic, and premium mouth fresheners handcrafted with traditional recipes. Delivered across India. Experience the taste of pure luxury.">
+    <title>Sangita Mukhwas - Premium Natural Mouth Fresheners & Digestifs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <header class="main-header" id="mainHeader">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" aria-label="Sangita Mukhwas Home">
+                <img src="assets/images/logo.jpg" alt="Sangita Mukhwas Logo" class="logo-img">
+                <span class="logo-text">Sangita <span class="gold-text">Mukhwas</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary magnetic-btn ripple-btn" id="navAmazonBtn">
+                    <span>Order on Amazon</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <nav class="mobile-nav-menu">
+            <ul>
+                <li><a href="#home" class="mobile-link">Home</a></li>
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#products" class="mobile-link">Products</a></li>
+                <li><a href="#why-us" class="mobile-link">Why Us</a></li>
+                <li><a href="#testimonials" class="mobile-link">Testimonials</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+                <li>
+                    <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary ripple-btn" style="width: 100%; text-align: center; justify-content: center; margin-top: 2rem;">
+                        <span>Order on Amazon</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg-wrapper">
+                <img src="assets/images/hero_bg.png" alt="Luxury spices background" class="hero-bg-img" id="heroBg">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge reveal-fade-up">100% Natural Ingredients</div>
+                    <h1 class="hero-title reveal-fade-up">
+                        Premium Flavourful <br>
+                        <span class="gold-text italic-serif">Mukhwas</span>
+                    </h1>
+                    <p class="hero-subtitle reveal-fade-up">
+                        100% Natural Mouth Fresheners crafted with authentic ingredients and delivered across India. Rediscover the traditional after-meal digestive luxury.
+                    </p>
+                    <div class="hero-buttons reveal-fade-up">
+                        <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary magnetic-btn ripple-btn">
+                            <span>Order on Amazon</span>
+                        </a>
+                        <a href="#products" class="btn btn-secondary magnetic-btn ripple-btn">
+                            <span>Explore Products</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floating Product Preview Card -->
+                <div class="hero-visual reveal-zoom" id="heroVisual">
+                    <div class="floating-spice leaf-1" data-depth="0.15">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M10 50 C 20 40, 45 45, 50 10 C 40 20, 20 15, 10 50 Z" fill="#1b5e20" opacity="0.45"/><path d="M10 50 Q 30 30, 50 10" stroke="#a5d6a7" stroke-width="1.5"/></svg>
+                    </div>
+                    <div class="floating-spice cardamom-1" data-depth="0.25">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="20" rx="15" ry="8" transform="rotate(-30 20 20)" fill="#81c784" opacity="0.7"/><path d="M5 28 L 35 12" stroke="#4caf50" stroke-width="1" stroke-dasharray="2 2"/></svg>
+                    </div>
+                    <div class="floating-spice particle-1" data-depth="0.35"></div>
+                    <div class="floating-spice particle-2" data-depth="0.08"></div>
+                    
+                    <div class="hero-product-card" id="heroProductCard">
+                        <div class="card-glass"></div>
+                        <img src="assets/images/shahi_mukhwas.png" alt="Sangita Shahi Mukhwas Jar" class="hero-product-img">
+                        <div class="hero-product-info">
+                            <span class="gold-text">Best Seller</span>
+                            <h3>Shahi Mukhwas</h3>
+                            <p>Golden roasted digestive excellence</p>
+                            <div class="price-row">
+                                <span class="rating">★★★★★</span>
+                                <span class="tag">100% Organic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to Brand Story">
+                <span class="scroll-text">Discover More</span>
+                <span class="scroll-mouse">
+                    <span class="scroll-wheel"></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- Brand Story Section -->
+        <section id="about" class="brand-story-section section-padding">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="story-content reveal-fade-right">
+                        <span class="section-tag gold-text">Crafted Heritage</span>
+                        <h2 class="section-title">Our Story</h2>
+                        <p class="story-lead">
+                            A culinary journey built on purity, tradition, and unmatched flavor. Sangita Mukhwas stands as the pinnacle of after-meal luxury.
+                        </p>
+                        <p class="story-body">
+                            Our recipes have been whispered through generations, maintaining a strict adherence to traditional slow-roasting techniques. We source only the finest, pristine fennel seeds from Rajasthan, authentic green cardamoms from Kerala, and organic rose petals to curate blends that aid digestion and elevate your senses. No shortcut is ever taken; no artificial colors, preservatives, or sweeteners ever touch our mixtures.
+                        </p>
+                        
+                        <!-- Timeline Animation -->
+                        <div class="timeline-container">
+                            <div class="timeline-line">
+                                <div class="timeline-progress" id="timelineProgress"></div>
+                            </div>
+                            <div class="timeline-step" data-step="1">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-step-content">
+                                    <h4>Pristine Sourcing</h4>
+                                    <p>Procuring 100% natural, farm-fresh ingredients directly from regional growers.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step" data-step="2">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-step-content">
+                                    <h4>Traditional Slow Roasting</h4>
+                                    <p>Gently hand-roasting seeds on heavy iron griddles to lock in authentic essential oils.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step" data-step="3">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-step-content">
+                                    <h4>Proprietary Herb Blend</h4>
+                                    <p>Merging the roasted seeds with delicate natural infusions like organic Pan and Gulkand.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-visual reveal-fade-left">
+                        <div class="visual-wrapper">
+                            <div class="image-frame-gold"></div>
+                            <img src="assets/images/hero_bg.png" alt="Traditional Mukhwas preparation spices" class="story-featured-img">
+                            <div class="floating-badge-glass">
+                                <span class="num">100%</span>
+                                <span class="lbl">Additive Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Sangita Section -->
+        <section id="why-us" class="why-us-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-fade-up">
+                    <span class="section-tag gold-text">Uncompromising Standards</span>
+                    <h2 class="section-title text-light">Why Choose Sangita</h2>
+                </div>
+                
+                <div class="why-grid">
+                    <!-- Card 1 -->
+                    <div class="why-card reveal-fade-up">
+                        <div class="card-border-gradient"></div>
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>100% Natural</h3>
+                        <p>Strictly zero chemical additives, synthetics, or processed sugars. Nature's finest in every spoon.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="why-card reveal-fade-up" style="animation-delay: 0.1s;">
+                        <div class="card-border-gradient"></div>
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        </div>
+                        <h3>Traditional Recipes</h3>
+                        <p>Time-tested recipes handed down through generations, roasted using slow artisanal methods.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="why-card reveal-fade-up" style="animation-delay: 0.2s;">
+                        <div class="card-border-gradient"></div>
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                        </div>
+                        <h3>No Artificial Preservatives</h3>
+                        <p>Crafted to stay naturally fresh through natural preservation techniques and air-tight seals.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="why-card reveal-fade-up">
+                        <div class="card-border-gradient"></div>
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Fresh Ingredients</h3>
+                        <p>Batch-made with fresh crops of high-grade fennel, cardamom, almonds, and rose petals.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="why-card reveal-fade-up" style="animation-delay: 0.1s;">
+                        <div class="card-border-gradient"></div>
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        </div>
+                        <h3>Pan India Delivery</h3>
+                        <p>Safely packaged and dispatched across all states, delivered directly to your doorstep.</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="why-card reveal-fade-up" style="animation-delay: 0.2s;">
+                        <div class="card-border-gradient"></div>
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h3>Loved by Customers</h3>
+                        <p>Highly recommended with thousands of five-star reviews praising our authentic taste.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="products" class="products-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-fade-up">
+                    <span class="section-tag gold-text">Signature Blends</span>
+                    <h2 class="section-title">Featured Products</h2>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card reveal-fade-up" id="prod-shahi">
+                        <div class="product-image-container">
+                            <img src="assets/images/shahi_mukhwas.png" alt="Shahi Mukhwas Glass Jar" class="product-img">
+                            <div class="product-tag font-sans">Best Seller</div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Shahi Mukhwas (Royal Blend)</h3>
+                            <p class="product-desc">A classic, majestic mix of roasted premium fennel seeds, sesame seeds, chopped almonds, coriander splits, and dry dates infused with structural spices.</p>
+                            <div class="product-benefits">
+                                <span>Aids Digestion</span>
+                                <span>Rich in Dietary Fiber</span>
+                                <span>Antioxidant Rich</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₹280 <small>/ 250g</small></span>
+                                <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary ripple-btn">
+                                    <span>Buy on Amazon</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card reveal-fade-up" id="prod-kashmiri" style="animation-delay: 0.1s;">
+                        <div class="product-image-container">
+                            <img src="assets/images/kashmiri_pan.png" alt="Kashmiri Pan Mukhwas Glass Jar" class="product-img">
+                            <div class="product-tag font-sans">Refreshing</div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Kashmiri Pan Mukhwas</h3>
+                            <p class="product-desc">A deeply cooling post-meal digestif infused with pure betel leaf extract, green cardamom, menthol, and candied rose petals.</p>
+                            <div class="product-benefits">
+                                <span>Instant Freshener</span>
+                                <span>Gut Cooling</span>
+                                <span>Sulphur Free</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₹295 <small>/ 250g</small></span>
+                                <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary ripple-btn">
+                                    <span>Buy on Amazon</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card reveal-fade-up" id="prod-dryfruit">
+                        <div class="product-image-container">
+                            <img src="assets/images/dry_fruit.png" alt="Dry Fruit Restorative Digestif Mix" class="product-img">
+                            <div class="product-tag font-sans">Nutritious</div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Restorative Dry Fruit Blend</h3>
+                            <p class="product-desc">A premium healthy blend featuring roasted pumpkin seeds, sesame, slivered almonds, cashews, and sweet dry dates, zero artificial sugar.</p>
+                            <div class="product-benefits">
+                                <span>Nutrient Dense</span>
+                                <span>Energy Booster</span>
+                                <span>Healthy Fats</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₹350 <small>/ 300g</small></span>
+                                <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary ripple-btn">
+                                    <span>Buy on Amazon</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card reveal-fade-up" id="prod-rose" style="animation-delay: 0.1s;">
+                        <div class="product-image-container">
+                            <img src="assets/images/rose_petal.png" alt="Royal Gulkand Rose Petal Mukhwas" class="product-img">
+                            <div class="product-tag font-sans">Exquisite</div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name">Royal Rose Gulkand Mukhwas</h3>
+                            <p class="product-desc">An aromatic digestive experience crafted with rich sun-dried gulkand, fennel seeds, melon seeds, and organic rose extracts.</p>
+                            <div class="product-benefits">
+                                <span>Relieves Acidity</span>
+                                <span>Soothing Aroma</span>
+                                <span>Kid Friendly</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₹310 <small>/ 250g</small></span>
+                                <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary ripple-btn">
+                                    <span>Buy on Amazon</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Section -->
+        <section id="ingredients" class="ingredients-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-fade-up">
+                    <span class="section-tag gold-text">Primal & Pure</span>
+                    <h2 class="section-title">Key Natural Ingredients</h2>
+                    <p class="subtitle">Hover over the ingredients surrounding our blend to reveal their ancient healing benefits.</p>
+                </div>
+
+                <div class="ingredients-showcase">
+                    <!-- Central Display -->
+                    <div class="ingredient-center reveal-zoom">
+                        <div class="center-content" id="ingredientCenterContent">
+                            <div class="center-icon">
+                                <svg viewBox="0 0 24 24" width="48" height="48" stroke="#D4AF37" stroke-width="1.5" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <h3 id="ingredientTitle">Pure Elements</h3>
+                            <p id="ingredientDesc">Hover or tap on any of the surrounding ingredients to discover how they enhance your digestive health and rejuvenate your palate.</p>
+                            <span class="benefit-tag" id="ingredientBenefit">100% Botanical</span>
+                        </div>
+                    </div>
+
+                    <!-- Surrounding Nodes (6 items) -->
+                    <div class="ingredient-node active" style="--angle: 0deg;" data-title="Artisanal Fennel (Saunf)" data-desc="Slow-roasted to release essential oils like anethole. Fennel seeds act as a strong anti-spasmodic, relieving bloating, acidity, and boosting overall digestion." data-benefit="Relieves Bloating" data-icon="fennel">
+                        <div class="node-dot"></div>
+                        <div class="node-label">Fennel</div>
+                    </div>
+                    <div class="ingredient-node" style="--angle: 60deg;" data-title="Green Cardamom (Elaichi)" data-desc="Sourced from Kerala estates, rich in cineole. It naturally neutralizes oral bacteria, sweetens breath, and relaxes stomach linings." data-benefit="Oral Freshener" data-icon="cardamom">
+                        <div class="node-dot"></div>
+                        <div class="node-label">Cardamom</div>
+                    </div>
+                    <div class="ingredient-node" style="--angle: 120deg;" data-title="Dry Dates (Kharik)" data-desc="Natural sun-dried dates provide delicious iron-rich sweetness, high dietary fibers, and minerals that regulate energy release." data-benefit="Iron & Fiber" data-icon="dates">
+                        <div class="node-dot"></div>
+                        <div class="node-label">Dry Dates</div>
+                    </div>
+                    <div class="ingredient-node" style="--angle: 180deg;" data-title="Betel Leaves (Paan)" data-desc="A traditional digestive catalyst. Fresh leaves are infused to stimulate salivary secretions and support metabolic activities." data-benefit="Metabolism Aid" data-icon="betel">
+                        <div class="node-dot"></div>
+                        <div class="node-label">Betel Leaves</div>
+                    </div>
+                    <div class="ingredient-node" style="--angle: 240deg;" data-title="Rose Petals (Gulkand)" data-desc="Artisanal sun-cured Gulkand provides cooling elements (Pitta-pacifying) that prevent heartburn and stomach heat." data-benefit="Pacifies Heartburn" data-icon="rose">
+                        <div class="node-dot"></div>
+                        <div class="node-label">Rose Gulkand</div>
+                    </div>
+                    <div class="ingredient-node" style="--angle: 300deg;" data-title="Roasted Almonds (Badam)" data-desc="Crispy almond slivers provide structure, rich dietary protein, healthy monounsaturated fats, and a satisfying luxurious crunch." data-benefit="Healthy Fats" data-icon="almonds">
+                        <div class="node-dot"></div>
+                        <div class="node-label">Almonds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews (Testimonials) Section -->
+        <section id="testimonials" class="testimonials-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-fade-up">
+                    <span class="section-tag gold-text">Patron Endorsements</span>
+                    <h2 class="section-title text-light">Loved by Connoisseurs</h2>
+                </div>
+
+                <!-- Testimonial Slider Carousel -->
+                <div class="testimonial-carousel-wrapper reveal-fade-up">
+                    <div class="testimonial-carousel" id="testimonialCarousel">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"Sangita Mukhwas has redefined digestifs for my family. The Shahi Blend has an exquisite crunch and is completely natural without that synthetic sweet aftertaste. It feels incredibly premium, exactly like what you'd expect from a high-end luxury brand."</p>
+                                <div class="reviewer-meta">
+                                    <span class="reviewer-name">Vikram Malhotra</span>
+                                    <span class="reviewer-title">Gourmet Food Critic</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"The Kashmiri Pan Mukhwas is refreshing and cooling. You can genuinely taste the real betel leaf extracts and cardamom pods. Having tried numerous brands, Sangita is miles ahead in quality and purity. Highly recommend ordering on Amazon!"</p>
+                                <div class="reviewer-meta">
+                                    <span class="reviewer-name">Priya Sharma</span>
+                                    <span class="reviewer-title">Organic Lifestyle Blogger</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I ordered their Royal Gulkand and Dry Fruits digestifs. Absolutely delightful! They slow-roast the seeds perfectly. The presentation in beautiful glass containers is outstanding. A staple post-dinner luxury in my household now."</p>
+                                <div class="reviewer-meta">
+                                    <span class="reviewer-name">Anand Vardhan</span>
+                                    <span class="reviewer-title">Industrialist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <!-- Dots populated dynamically by JS -->
+                    </div>
+
+                    <div class="carousel-arrows">
+                        <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous Review">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button class="carousel-arrow next" id="carouselNext" aria-label="Next Review">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section section-padding">
+            <div class="container">
+                <div class="stats-grid">
+                    <!-- Stat 1 -->
+                    <div class="stat-item reveal-zoom">
+                        <div class="stat-num" data-target="30">0</div>
+                        <div class="stat-label">Years of Trust</div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="stat-item reveal-zoom" style="animation-delay: 0.1s;">
+                        <div class="stat-num" data-target="50000">0</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="stat-item reveal-zoom" style="animation-delay: 0.2s;">
+                        <div class="stat-num" data-target="1000000">0</div>
+                        <div class="stat-label">Orders Delivered</div>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="stat-item reveal-zoom" style="animation-delay: 0.3s;">
+                        <div class="stat-num" data-target="100">0</div>
+                        <div class="stat-label">% Natural Ingredients</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amazon CTA Section -->
+        <section class="amazon-cta-section">
+            <div class="container">
+                <div class="amazon-cta-box reveal-zoom">
+                    <div class="cta-overlay-glow"></div>
+                    <div class="cta-content text-center">
+                        <span class="section-tag gold-text">Order Instantly</span>
+                        <h2>Experience the Luxury at Home</h2>
+                        <p>Enjoy premium, freshly blended Sangita Mukhwas delivered directly to your doorstep. Available nationwide with safe, contactless dispatch on Amazon.</p>
+                        <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-primary amazon-large-btn magnetic-btn ripple-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" class="amazon-icon"><path d="M18.8 15.5c-1.3 1.5-3.3 2.5-5.9 2.5-4.1 0-7.3-2.9-7.3-7.5s3.2-7.5 7.3-7.5c2.6 0 4.6 1 5.9 2.5l1.6-1.6C18.6 2.1 16 1 12.9 1 7.2 1 2.8 5.1 2.8 10.5s4.4 9.5 10.1 9.5c3.1 0 5.7-1.1 7.5-2.9l-1.6-1.6zM22.2 14.5c-.3-.2-.7-.2-.9.1L21 15c-.4.5-.9 1-1.5 1-1 0-1.6-.7-1.6-1.7V9.7H22v-2h-4.1V5.2h-2v2.5h-2.1v2h2.1V14c0 2.2 1.4 3.7 3.6 3.7 1.3 0 2.4-.7 3.1-1.7.3-.4.2-.8-.2-1h-.3z"/></svg>
+                            <span>Shop Sangita Mukhwas on Amazon</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-card-wrapper">
+                    <!-- Left Column: Branding & Links -->
+                    <div class="contact-info-panel reveal-fade-right">
+                        <span class="section-tag gold-text">Reach Out</span>
+                        <h2 class="section-title text-light">Connect With Us</h2>
+                        <p class="contact-intro">Whether you have bulk inquiries, custom wedding gifting requests, or simply want to share your experience, we would love to hear from you.</p>
+                        
+                        <div class="contact-methods">
+                            <!-- Email -->
+                            <div class="contact-method-item">
+                                <div class="icon-circle">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div class="text-group">
+                                    <span class="label">Email Address</span>
+                                    <a href="mailto:info@sangitamukhwas.com" class="value">info@sangitamukhwas.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="contact-method-item">
+                                <div class="icon-circle">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div class="text-group">
+                                    <span class="label">Phone Support</span>
+                                    <a href="tel:+919876543210" class="value">+91 98765 43210</a>
+                                </div>
+                            </div>
+
+                            <!-- Social Hooks -->
+                            <div class="contact-social-links">
+                                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon-btn">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                                </a>
+                                <a href="https://amazon.in" target="_blank" rel="noopener" aria-label="Amazon Store" class="social-icon-btn">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.79 14.19c-1.37 0-2.31-.69-2.31-1.85 0-1.12.92-1.74 2.29-1.74h2.15v.85c0 1.63-1.07 2.74-2.13 2.74zm2.15-4.48h-2.11c-.75 0-1.33.15-1.75.45-.36.26-.54.64-.54 1.13 0 .84.58 1.34 1.64 1.34 1.27 0 2.21-.77 2.21-1.95v-.97h.55z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Form -->
+                    <div class="contact-form-panel reveal-fade-left">
+                        <form id="contactForm" onsubmit="event.preventDefault(); alert('Message sent! Our luxury coordinator will contact you shortly.');">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" id="contactName" required placeholder=" " class="form-input">
+                                    <label for="contactName" class="form-label">Full Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contactEmail" required placeholder=" " class="form-input">
+                                    <label for="contactEmail" class="form-label">Email Address</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="contactPhone" required placeholder=" " class="form-input">
+                                <label for="contactPhone" class="form-label">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="contactMessage" required placeholder=" " class="form-input" rows="4"></textarea>
+                                <label for="contactMessage" class="form-label">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit-btn magnetic-btn ripple-btn">
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-brand-column">
+                <a href="#home" class="footer-logo">
+                    <img src="assets/images/logo.jpg" alt="Sangita Mukhwas Logo" class="footer-logo-img">
+                    <span class="logo-text text-light">Sangita <span class="gold-text">Mukhwas</span></span>
+                </a>
+                <p class="footer-about">Indulge in the finest natural after-meal digestives, roasted with tradition and packed with purity. Handcrafted in India, enjoyed nationwide.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="https://amazon.in" target="_blank" rel="noopener" aria-label="Amazon Store"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.79 14.19c-1.37 0-2.31-.69-2.31-1.85 0-1.12.92-1.74 2.29-1.74h2.15v.85c0 1.63-1.07 2.74-2.13 2.74zm2.15-4.48h-2.11c-.75 0-1.33.15-1.75.45-.36.26-.54.64-.54 1.13 0 .84.58 1.34 1.64 1.34 1.27 0 2.21-.77 2.21-1.95v-.97h.55z"/></svg></a>
+                </div>
+            </div>
+
+            <div class="footer-links-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Our Story</a></li>
+                    <li><a href="#products">Signature Products</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Customer Reviews</a></li>
+                    <li><a href="#contact">Contact Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-legal-column">
+                <h4>Certifications</h4>
+                <div class="cert-badges">
+                    <span class="cert-badge">100% Organic</span>
+                    <span class="cert-badge">FSSAI Certified</span>
+                    <span class="cert-badge">Traditional Roast</span>
+                </div>
+                <p class="copyright-text">&copy; 2026 Sangita Mukhwas. All Rights Reserved. Crafted with love for gourmet food enthusiasts.</p>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </button>
+    </footer>
+
+    <!-- Local Script -->
+    <script src="script.js"></script>
+</body>
+</html>
