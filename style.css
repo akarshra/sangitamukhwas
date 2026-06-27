@@ -1673,6 +1673,13 @@ body:hover .cursor-glow {
     
     .why-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .why-card {
+        padding: 3rem 2rem;
+    }
+    .why-card h3 {
+        font-size: 1.6rem;
     }
     
     .footer-container {
@@ -1784,6 +1791,18 @@ body:hover .cursor-glow {
         margin-top: 0;
         width: 100%;
         text-align: center;
+    }
+    
+    /* Why Choose grid */
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    .why-card {
+        padding: 2.5rem 1.8rem;
+    }
+    .why-card h3 {
+        font-size: 1.5rem;
     }
     
     /* Product grid */
