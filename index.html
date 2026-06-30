@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sangita Mukhwas - 100% Natural, authentic, and premium mouth fresheners handcrafted with traditional recipes. Delivered across India. Experience the taste of pure luxury.">
     <title>Sangita Mukhwas - Premium Natural Mouth Fresheners & Digestifs</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +14,31 @@
     <!-- Local Stylesheet -->
     <link rel="stylesheet" href="style.css?v=1.3">
 </head>
-<body>
+<body class="preloader-active">
+    <!-- Elegant Luxury Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="assets/images/logo.jpg" alt="Sangita Mukhwas Logo" class="preloader-logo-img">
+            </div>
+            <div class="preloader-line-container">
+                <div class="preloader-line" id="preloaderLine"></div>
+            </div>
+            <div class="preloader-text-wrapper">
+                <span class="preloader-brand">SANGITA MUKHWAS</span>
+                <span class="preloader-percent" id="preloaderPercent">0%</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Grain Overlay -->
     <div class="grain-overlay" aria-hidden="true"></div>
 
-    <!-- Custom Cursor Glow -->
-    <div class="cursor-glow" id="cursorGlow"></div>
+    <!-- Premium Dual-Element Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-follower" id="cursorFollower" aria-hidden="true">
+        <span class="cursor-text" id="cursorText"></span>
+    </div>
 
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress-container">
@@ -376,6 +397,11 @@
                 </div>
 
                 <div class="ingredients-showcase">
+                    <!-- Connective SVG lines -->
+                    <svg class="ingredients-connections" id="ingredientsConnections" viewBox="0 0 650 650" aria-hidden="true">
+                        <path id="connectionPath" d="" stroke="rgba(212, 175, 55, 0.4)" stroke-width="2.5" fill="none"/>
+                    </svg>
+
                     <!-- Central Display -->
                     <div class="ingredient-center reveal-zoom">
                         <div class="center-content" id="ingredientCenterContent">

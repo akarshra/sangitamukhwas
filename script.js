@@ -3,6 +3,9 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Preloader first
+    initPreloader();
+
     // Initialize components
     initCustomCursor();
     initStickyNavbar();
@@ -22,31 +25,74 @@ document.addEventListener('DOMContentLoaded', () => {
    1. CUSTOM CURSOR GLOW
    ========================================================================== */
 function initCustomCursor() {
-    const cursorGlow = document.getElementById('cursorGlow');
-    if (!cursorGlow) return;
+    const cursorDot = document.getElementById('cursorDot');
+    const cursorFollower = document.getElementById('cursorFollower');
+    const cursorText = document.getElementById('cursorText');
+    if (!cursorDot || !cursorFollower) return;
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
+    let mouseX = -100;
+    let mouseY = -100;
+    
+    // Lerped position for follower
+    let followerX = -100;
+    let followerY = -100;
+    
+    let hasMoved = false;
 
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        hasMoved = true;
+        
+        // Instant position for the dot
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
     });
 
-    // Butter-smooth interpolation (lerp) for the glow coordinates
-    function animateCursor() {
-        const lerpFactor = 0.08;
-        currentX += (mouseX - currentX) * lerpFactor;
-        currentY += (mouseY - currentY) * lerpFactor;
-
-        cursorGlow.style.left = `${currentX}px`;
-        cursorGlow.style.top = `${currentY}px`;
-
-        requestAnimationFrame(animateCursor);
+    // Lerp loop for follower
+    function animateFollower() {
+        if (hasMoved) {
+            const lerpFactor = 0.12;
+            followerX += (mouseX - followerX) * lerpFactor;
+            followerY += (mouseY - followerY) * lerpFactor;
+            
+            cursorFollower.style.left = `${followerX}px`;
+            cursorFollower.style.top = `${followerY}px`;
+        }
+        requestAnimationFrame(animateFollower);
     }
-    requestAnimationFrame(animateCursor);
+    requestAnimationFrame(animateFollower);
+
+    // Interactive Hover States
+    const interactables = document.querySelectorAll('a, button, .product-card, .ingredient-node, .why-card, .carousel-arrow, .carousel-dot');
+    
+    interactables.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            cursorFollower.classList.add('active');
+            let text = 'EXPLORE';
+            const href = item.getAttribute('href');
+            if (item.tagName === 'A' && href && href.includes('amazon')) {
+                text = 'ORDER';
+            } else if (item.classList.contains('product-card') || item.classList.contains('ingredient-node')) {
+                text = 'VIEW';
+            } else if (item.classList.contains('why-card')) {
+                text = 'INFO';
+            } else if (item.id === 'backToTopBtn') {
+                text = 'UP';
+            } else if (item.classList.contains('carousel-arrow') || item.classList.contains('carousel-dot')) {
+                text = 'SELECT';
+            }
+            
+            if (cursorText) {
+                cursorText.textContent = text;
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            cursorFollower.classList.remove('active');
+            if (cursorText) cursorText.textContent = '';
+        });
+    });
 }
 
 /* ==========================================================================
@@ -226,6 +272,12 @@ function initProductCardTilt() {
             const rotateX = -deltaY * maxRotate;
             const rotateY = deltaX * maxRotate;
 
+            // Calculate glare percentages
+            const glareX = (x / rect.width) * 100;
+            const glareY = (y / rect.height) * 100;
+            card.style.setProperty('--glare-x', `${glareX}%`);
+            card.style.setProperty('--glare-y', `${glareY}%`);
+
             card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
             card.style.transition = 'transform 0.1s ease';
         });
@@ -245,8 +297,50 @@ function initIngredientsShowcase() {
     const centerTitle = document.getElementById('ingredientTitle');
     const centerDesc = document.getElementById('ingredientDesc');
     const centerBenefit = document.getElementById('ingredientBenefit');
+    const showcase = document.querySelector('.ingredients-showcase');
 
     if (nodes.length === 0 || !centerTitle || !centerDesc || !centerBenefit) return;
+
+    let ingredientCycleTimer;
+    let currentIngredientIndex = 0;
+
+    function drawConnectionLine(activeNode) {
+        const svgPath = document.getElementById('connectionPath');
+        if (!showcase || !svgPath || !activeNode) return;
+        
+        const showcaseRect = showcase.getBoundingClientRect();
+        const centerNode = document.querySelector('.ingredient-center');
+        if (!centerNode) return;
+        
+        const centerRect = centerNode.getBoundingClientRect();
+        
+        // Center point relative to showcase
+        const centerX = (centerRect.left + centerRect.width / 2) - showcaseRect.left;
+        const centerY = (centerRect.top + centerRect.height / 2) - showcaseRect.top;
+        
+        // Active node dot relative to showcase
+        const dot = activeNode.querySelector('.node-dot');
+        if (!dot || window.getComputedStyle(dot).display === 'none') {
+            svgPath.setAttribute('d', '');
+            return;
+        }
+        
+        const dotRect = dot.getBoundingClientRect();
+        const targetX = (dotRect.left + dotRect.width / 2) - showcaseRect.left;
+        const targetY = (dotRect.top + dotRect.height / 2) - showcaseRect.top;
+        
+        // Perpendicular offset for a dynamic curved line
+        const dx = targetX - centerX;
+        const dy = targetY - centerY;
+        const len = Math.sqrt(dx*dx + dy*dy);
+        const offsetX = -dy / len * 40;
+        const offsetY = dx / len * 40;
+        
+        const ctrlX = (centerX + targetX) / 2 + offsetX;
+        const ctrlY = (centerY + targetY) / 2 + offsetY;
+        
+        svgPath.setAttribute('d', `M ${centerX} ${centerY} Q ${ctrlX} ${ctrlY} ${targetX} ${targetY}`);
+    }
 
     function activateNode(node) {
         // Remove active state from all nodes
@@ -262,25 +356,71 @@ function initIngredientsShowcase() {
 
         // Update content in central circle with elegant fade
         const displayBox = document.getElementById('ingredientCenterContent');
-        displayBox.style.opacity = '0';
-        displayBox.style.transform = 'scale(0.95)';
-        displayBox.style.transition = 'all 0.2s ease';
+        if (displayBox) {
+            displayBox.style.opacity = '0';
+            displayBox.style.transform = 'scale(0.95)';
+            displayBox.style.transition = 'all 0.2s ease';
+        }
 
         setTimeout(() => {
             centerTitle.textContent = title;
             centerDesc.textContent = desc;
             centerBenefit.textContent = benefit;
             
-            displayBox.style.opacity = '1';
-            displayBox.style.transform = 'scale(1)';
-            displayBox.style.transition = 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+            if (displayBox) {
+                displayBox.style.opacity = '1';
+                displayBox.style.transform = 'scale(1)';
+                displayBox.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+            }
         }, 200);
+
+        // Update SVG line
+        drawConnectionLine(node);
+        
+        // Sync index
+        currentIngredientIndex = Array.from(nodes).indexOf(node);
+    }
+
+    function startIngredientCycle() {
+        ingredientCycleTimer = setInterval(() => {
+            currentIngredientIndex = (currentIngredientIndex + 1) % nodes.length;
+            activateNode(nodes[currentIngredientIndex]);
+        }, 4000);
+    }
+
+    function stopIngredientCycle() {
+        clearInterval(ingredientCycleTimer);
     }
 
     nodes.forEach(node => {
-        node.addEventListener('mouseenter', () => activateNode(node));
-        node.addEventListener('click', () => activateNode(node));
+        node.addEventListener('mouseenter', () => {
+            stopIngredientCycle();
+            activateNode(node);
+        });
+        node.addEventListener('click', () => {
+            stopIngredientCycle();
+            activateNode(node);
+        });
     });
+
+    if (showcase) {
+        showcase.addEventListener('mouseleave', startIngredientCycle);
+    }
+
+    // Redraw connections on window resize
+    window.addEventListener('resize', () => {
+        const activeNode = document.querySelector('.ingredient-node.active');
+        if (activeNode) drawConnectionLine(activeNode);
+    });
+
+    // Start auto cycle
+    startIngredientCycle();
+
+    // Initial connection line drawing (wait for layout styles to settle)
+    setTimeout(() => {
+        const activeNode = document.querySelector('.ingredient-node.active') || nodes[0];
+        if (activeNode) activateNode(activeNode);
+    }, 400);
 }
 
 /* ==========================================================================
@@ -561,4 +701,36 @@ function initMobileNav() {
             });
         });
     }
+}
+
+/* ==========================================================================
+   13. ELEGANT PRELOADER
+   ========================================================================== */
+function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    const preloaderLine = document.getElementById('preloaderLine');
+    const preloaderPercent = document.getElementById('preloaderPercent');
+    if (!preloader || !preloaderLine || !preloaderPercent) return;
+
+    let progress = 0;
+    const duration = 1800; // 1.8 seconds loading time
+    const intervalTime = 30;
+    const increment = (intervalTime / duration) * 100;
+
+    // Trigger line loading animation width
+    preloaderLine.style.width = '100%';
+
+    const timer = setInterval(() => {
+        progress += increment;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(timer);
+            
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                document.body.classList.remove('preloader-active');
+            }, 300);
+        }
+        preloaderPercent.textContent = `${Math.round(progress)}%`;
+    }, intervalTime);
 }
